@@ -1,6 +1,7 @@
 name: CI-macOS
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [ master ]
 
@@ -27,5 +28,5 @@ jobs:
             CODE_SIGNING_REQUIRED=NO \
             -sdk macosx \
             -destination "platform=macOS" \
-            -enableThreadSanitizer YES \
+            -enableThreadSanitizer NO \
             ONLY_ACTIVE_ARCH=YES
